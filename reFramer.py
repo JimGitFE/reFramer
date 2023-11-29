@@ -26,7 +26,7 @@ def main():
         dst = f"render_{str(newPos)}.jpg"
         src =f"input/{filename}"  
         dst =f"output/{dst}"
-        imagesCount = count
+        imagesCount = count + 1
         
         # rename() function will
         # rename all the files
@@ -39,10 +39,10 @@ if __name__ == '__main__':
      
     # Calling main() function
     folderValidation()
-    print("Offset Count by x amount:")
-    offset = input(0)
+    print("Offset Count by x amount (default 0):")
+    offset = input()
     main()
-    print(f"reFramer {imagesCount+1} images affected")
+    print(f"reFramer {imagesCount} images affected")
 
     # Read input to keep window open
     input("exit...")
