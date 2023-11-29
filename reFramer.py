@@ -15,7 +15,7 @@ def main():
         src =f"input/{filename}"  
         dst =f"output/{dst}"
         imagesCount = count
-         
+        
         # rename() function will
         # rename all the files
         os.rename(src, dst)
