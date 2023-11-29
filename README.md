@@ -10,4 +10,4 @@ ___
 
 
 
-python3 -m PyInstaller file.py
+python3 -m PyInstaller reFramer.py --onefile

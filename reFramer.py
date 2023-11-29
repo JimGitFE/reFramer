@@ -7,6 +7,7 @@
 import os
  
 imagesCount = 0
+offset = 0
 
 # check if output & input folders exist
 def folderValidation():
@@ -17,17 +18,19 @@ def folderValidation():
 
 # Function to rename multiple files
 def main():
+    global offset
     global imagesCount
-    
+
     for count, filename in enumerate(os.listdir("input")):
-        dst = f"render_{str(count)}.jpg"
+        newPos = count + int(offset)
+        dst = f"render_{str(newPos)}.jpg"
         src =f"input/{filename}"  
         dst =f"output/{dst}"
         imagesCount = count
         
         # rename() function will
         # rename all the files
-        os.rename(src, dst)
+        os.replace(src, dst)
  
 
 
@@ -36,5 +39,10 @@ if __name__ == '__main__':
      
     # Calling main() function
     folderValidation()
+    print("Offset Count by x amount:")
+    offset = input(0)
     main()
-    print(f"reFramer {imagesCount} images affected")
+    print(f"reFramer {imagesCount+1} images affected")
+
+    # Read input to keep window open
+    input("exit...")
