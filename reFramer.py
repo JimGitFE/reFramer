@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Python 3 code to rename multiple 
 # files in a directory or folder
  
@@ -8,6 +10,11 @@ imagesCount = 0
 
 # Function to rename multiple files
 def main():
+    # check if output & input folders exist
+    inputExist = os.path.exists("input")
+    if not inputExist: os.makedirs("input")
+    outputExist = os.path.exists("output")
+    if not outputExist: os.makedirs("output")
     global imagesCount
 
     for count, filename in enumerate(os.listdir("input")):
